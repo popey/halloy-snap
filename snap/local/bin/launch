@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export XDG_CONFIG_HOME="${SNAP_USER_COMMON}"/.config
+exec $SNAP/bin/halloy "$@"

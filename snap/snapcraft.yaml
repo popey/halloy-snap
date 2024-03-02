@@ -1,0 +1,50 @@
+name: halloy
+adopt-info: halloy
+summary: IRC application written in Rust
+description: |
+  Halloy is an open-source IRC client written in Rust, with the Iced
+  GUI library. It aims to provide a simple and fast client for Mac, 
+  Windows, and Linux platforms.
+
+grade: stable
+confinement: strict
+base: core22
+compression: lzo
+
+icon: snap/gui/org.squidowl.halloy.png
+website: https://squidowl.org/
+source-code: https://github.com/squidowl/halloy
+issues: https://github.com/squidowl/halloy/issues
+contact: https://github.com/squidowl/halloy/issues
+
+architectures:
+  - build-on: amd64
+  - build-on: arm64
+  - build-on: armhf
+
+parts:
+  halloy:
+    plugin: rust
+    source: https://github.com/squidowl/halloy
+    source-type: git
+    source-tag: "2024.1"
+    override-pull: |
+      craftctl default
+      craftctl set version="$(cat VERSION).$(git rev-parse --short HEAD)"
+    build-packages:
+      - cargo
+      - libssl-dev  
+    stage-packages:
+      - libxkbcommon-x11-0
+  launcher:
+    source: snap/local
+    plugin: dump
+
+apps:
+  halloy:
+    command: bin/launch
+    desktop: snap/gui/org.squidowl.halloy.desktop
+    common-id: org.squidowl.halloy
+    extensions: [gnome]
+    plugs:
+      - network
