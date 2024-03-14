@@ -27,7 +27,6 @@ parts:
     plugin: rust
     source: https://github.com/squidowl/halloy
     source-type: git
-    source-tag: "2024.3"
     override-pull: |
       craftctl default
       craftctl set version="$(cat VERSION).$(git rev-parse --short HEAD)"
