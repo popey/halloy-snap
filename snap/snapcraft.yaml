@@ -27,14 +27,15 @@ parts:
     plugin: rust
     source: https://github.com/squidowl/halloy
     source-type: git
-    override-pull: |
+    override-build: |
       craftctl default
-      craftctl set version="$(cat VERSION).$(git rev-parse --short HEAD)"
+      install -Dm644 $CRAFT_PART_SRC/assets/linux/org.squidowl.halloy.appdata.xml $CRAFT_PART_INSTALL/share/metainfo/org.squidowl.halloy.appdata.xml
     build-packages:
       - cargo
       - libssl-dev  
     stage-packages:
       - libxkbcommon-x11-0
+    parse-info: [share/metainfo/org.squidowl.halloy.appdata.xml]
   launcher:
     source: snap/local
     plugin: dump
@@ -42,7 +43,6 @@ parts:
 apps:
   halloy:
     command: bin/launch
-    desktop: snap/gui/org.squidowl.halloy.desktop
     common-id: org.squidowl.halloy
     extensions: [gnome]
     plugs:
