@@ -1,5 +1,5 @@
 name: halloy
-adopt-info: halloy
+version: 2024.8
 summary: IRC application written in Rust
 description: |
   Halloy is an open-source IRC client written in Rust, with the Iced
@@ -25,11 +25,7 @@ architectures:
 parts:
   halloy:
     plugin: rust
-    source: https://github.com/squidowl/halloy
-    source-type: git
-    override-pull: |
-      craftctl default
-      craftctl set version="$(cat VERSION).$(git rev-parse --short HEAD)"
+    source: https://github.com/squidowl/halloy/archive/refs/tags/$SNAPCRAFT_PROJECT_VERSION.tar.gz
     build-packages:
       - cargo
       - libssl-dev  
