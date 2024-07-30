@@ -23,23 +23,43 @@ architectures:
   - build-on: armhf
 
 parts:
+  alsa-mixin:
+    plugin: dump
+    source: https://github.com/diddlesnaps/snapcraft-alsa.git
+    source-subdir: snapcraft-assets
+    build-packages:
+      - libasound2-dev
+    stage-packages:
+      - libasound2
+      - libasound2-plugins
   halloy:
+    after: [alsa-mixin]
     plugin: rust
     source: https://github.com/squidowl/halloy/archive/refs/tags/$SNAPCRAFT_PROJECT_VERSION.tar.gz
     build-packages:
       - cargo
-      - libssl-dev  
+      - libssl-dev
+      - libasound2-dev
+      - pkg-config
+      - libpulse-dev
     stage-packages:
       - libxkbcommon-x11-0
+      - libpulse0
   launcher:
     source: snap/local
     plugin: dump
 
 apps:
   halloy:
+    environment:
+      LD_LIBRARY_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/"
+      LC_ALL: "C.UTF-8"
+      ALWAYS_USE_PULSEAUDIO: '1'
+      ALSA_CONFIG_PATH: /snap/$SNAPCRAFT_PROJECT_NAME/current/usr/share/alsa
     command: bin/launch
     desktop: snap/gui/org.squidowl.halloy.desktop
     common-id: org.squidowl.halloy
     extensions: [gnome]
     plugs:
       - network
+      - audio-playback
