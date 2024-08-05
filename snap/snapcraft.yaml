@@ -1,5 +1,5 @@
 name: halloy
-version: 2024.10
+version: "2024.10"
 summary: IRC application written in Rust
 description: |
   Halloy is an open-source IRC client written in Rust, with the Iced
