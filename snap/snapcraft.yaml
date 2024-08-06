@@ -36,6 +36,9 @@ parts:
     after: [alsa-mixin]
     plugin: rust
     source: https://github.com/squidowl/halloy/archive/refs/tags/$SNAPCRAFT_PROJECT_VERSION.tar.gz
+    override-build: |
+      craftctl default
+      install -Dm644 $CRAFT_PART_SRC/assets/linux/org.squidowl.halloy.appdata.xml $CRAFT_PART_INSTALL/share/metainfo/org.squidowl.halloy.appdata.xml
     build-packages:
       - cargo
       - libssl-dev
@@ -45,6 +48,7 @@ parts:
     stage-packages:
       - libxkbcommon-x11-0
       - libpulse0
+    parse-info: [share/metainfo/org.squidowl.halloy.appdata.xml]
   launcher:
     source: snap/local
     plugin: dump
@@ -57,7 +61,6 @@ apps:
       ALWAYS_USE_PULSEAUDIO: '1'
       ALSA_CONFIG_PATH: /snap/$SNAPCRAFT_PROJECT_NAME/current/usr/share/alsa
     command: bin/launch
-    desktop: snap/gui/org.squidowl.halloy.desktop
     common-id: org.squidowl.halloy
     extensions: [gnome]
     plugs:
