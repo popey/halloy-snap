@@ -45,6 +45,7 @@ parts:
       - libasound2-dev
       - pkg-config
       - libpulse-dev
+      - libxcb1-dev
     stage-packages:
       - libxkbcommon-x11-0
       - libpulse0
