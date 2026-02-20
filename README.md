@@ -3,6 +3,7 @@
 [![halloy](https://github.com/popey/halloy-snap/actions/workflows/test-snap-can-build.yml/badge.svg)](https://github.com/popey/halloy-snap/actions)
 [![halloy](https://snapcraft.io/halloy/badge.svg)](https://snapcraft.io/halloy)
 [![halloy](https://snapcraft.io/halloy/trending.svg?name=0)](https://snapcraft.io/halloy)
+
 ## halloy
 
 halloy is a beautiful, modern IRC client written in Rust.
