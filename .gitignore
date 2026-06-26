@@ -1,0 +1,14 @@
+# Rust/Cargo
+/target/
+/**/target/
+**/target/
+# Cargo registry and git db
+/.cargo/registry
+/.cargo/git
+# Visual Studio Code
+.vscode/
+# Snap build artifacts
+.snap/
+# Editor temp files
+*~
+.DS_Store
