@@ -1,0 +1,18 @@
+# Rust/Cargo
+/target/
+
+# Cargo registry and git database
+/.cargo/git/
+/.cargo/registry/
+
+# Snapcraft output
+/*.snap
+/.snap/
+/prime/
+/stage/
+/parts/
+
+# Editor and OS files
+*~
+.DS_Store
+.vscode/
