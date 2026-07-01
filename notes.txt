@@ -3,3 +3,5 @@
 - Created issue proposing CI caching for snapcraft builds (proposal)
 - Commented on issue #20 offering to open draft PR for README developer notes
 - Updated Monthly Activity issue #18 with run summary and suggested actions
+
+2026-07-01: improved packaging-check coverage; added test helper and ROOT_DIR override support.
