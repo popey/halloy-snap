@@ -5,3 +5,5 @@
 - Updated Monthly Activity issue #18 with run summary and suggested actions
 
 2026-07-01: improved packaging-check coverage; added test helper and ROOT_DIR override support.
+
+2026-07-01: Commented on issue #43, expanded packaging-check tests with a non-executable launcher case, updated Monthly Activity issue #50, and verified packaging checks.
