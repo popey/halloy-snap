@@ -85,4 +85,28 @@ if ! grep -q "ERROR: launcher not found: $missing_fixture/snap/local/bin/missing
   exit 1
 fi
 
+nonexec_fixture="$WORKDIR/nonexec"
+mkdir -p "$nonexec_fixture/snap/local/bin"
+cat >"$nonexec_fixture/snap/snapcraft.yaml" <<'YAML'
+name: halloy
+apps:
+  halloy:
+    command: bin/launch --windowed
+YAML
+cat >"$nonexec_fixture/snap/local/bin/launch" <<'EOF'
+#!/usr/bin/env bash
+exit 0
+EOF
+nonexec_output="$WORKDIR/nonexec.out"
+if ROOT_DIR="$nonexec_fixture" bash "$SCRIPT" >"$nonexec_output" 2>&1; then
+  echo "expected non-executable launcher fixture to fail"
+  cat "$nonexec_output"
+  exit 1
+fi
+if ! grep -q "ERROR: launcher is not executable: $nonexec_fixture/snap/local/bin/launch" "$nonexec_output"; then
+  echo "expected non-executable launcher error"
+  cat "$nonexec_output"
+  exit 1
+fi
+
 echo "Packaging check tests passed"
