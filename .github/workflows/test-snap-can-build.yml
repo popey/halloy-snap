@@ -8,13 +8,38 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    name: Build snap
+  packaging-check:
+    name: Packaging check
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Test packaging check script
+        run: scripts/test-check-packaging.sh
+
+      - name: Check snap packaging files
+        run: scripts/check-packaging.sh
+
+  build:
+    name: Build snap
+    runs-on: ubuntu-latest
+    needs: packaging-check
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Cache snapcraft state
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/snapcraft
+            ~/.local/state/snapcraft
+          key: snapcraft-${{ runner.os }}-${{ hashFiles('snap/snapcraft.yaml') }}
+          restore-keys: |
+            snapcraft-${{ runner.os }}-
 
       - name: Build snap
         uses: snapcore/action-build@v1
