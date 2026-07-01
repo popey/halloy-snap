@@ -16,6 +16,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Test packaging check script
+        run: scripts/test-check-packaging.sh
+
       - name: Check snap packaging files
         run: scripts/check-packaging.sh
 
