@@ -6,4 +6,4 @@
 
 2026-07-01: improved packaging-check coverage; added test helper and ROOT_DIR override support.
 
-2026-07-01: Commented on issue #43, expanded packaging-check tests with a non-executable launcher case, updated Monthly Activity issue #50, and verified packaging checks.
+2026-07-01: Commented on issue #43, expanded packaging-check tests with a non-executable launcher case, updated Monthly Activity issue #50, and verified packaging checks.10. 2026-07-02: Prepared a combined maintenance branch with a README gh aw compile note and launcher hardening, verified the launcher with a fake Halloy binary, and created the July Monthly Activity issue.
