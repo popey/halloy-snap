@@ -11,3 +11,7 @@ halloy is a beautiful, modern IRC client written in Rust.
 This snap is a community-maintained unofficial build of halloy. 
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/halloy)
+
+## Developer notes
+
+If you edit `.github/workflows/repo-assist.md` or its frontmatter, run `gh aw compile repo-assist` and commit the regenerated `.github/workflows/repo-assist.lock.yml`.
