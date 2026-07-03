@@ -110,4 +110,30 @@ if ! grep -q "ERROR: launcher is not executable: $nonexec_fixture/snap/local/bin
   exit 1
 fi
 
+syntax_fixture="$WORKDIR/syntax"
+mkdir -p "$syntax_fixture/snap/local/bin"
+cat >"$syntax_fixture/snap/snapcraft.yaml" <<'YAML'
+name: halloy
+apps:
+  halloy:
+    command: bin/launch
+YAML
+cat >"$syntax_fixture/snap/local/bin/launch" <<'EOF'
+#!/usr/bin/env bash
+if [
+EOF
+chmod +x "$syntax_fixture/snap/local/bin/launch"
+
+syntax_output="$WORKDIR/syntax.out"
+if ROOT_DIR="$syntax_fixture" bash "$SCRIPT" >"$syntax_output" 2>&1; then
+  echo "expected shell syntax fixture to fail"
+  cat "$syntax_output"
+  exit 1
+fi
+if ! grep -q "ERROR: launcher has shell syntax errors: $syntax_fixture/snap/local/bin/launch" "$syntax_output"; then
+  echo "expected shell syntax error"
+  cat "$syntax_output"
+  exit 1
+fi
+
 echo "Packaging check tests passed"

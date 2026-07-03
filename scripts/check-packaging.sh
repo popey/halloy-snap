@@ -64,6 +64,15 @@ for command in "${commands[@]}"; do
     continue
   fi
 
+  first_line="$(head -n 1 "$launcher_path")"
+  if [[ "$first_line" == "#!"*"sh"* || "$first_line" == "#!"*"bash"* ]]; then
+    if ! bash -n "$launcher_path"; then
+      echo "ERROR: launcher has shell syntax errors: $launcher_path" >&2
+      failed=1
+      continue
+    fi
+  fi
+
   echo "OK: $launcher is present and executable"
 done
 
