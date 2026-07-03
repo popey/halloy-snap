@@ -1,0 +1,5 @@
+2026-07-03 run
+- Created branch repo-assist/improve-packaging-check-syntax.
+- Hardened scripts/check-packaging.sh to run bash -n on each launcher.
+- Verified the new check passes on the repo copy and fails on a temp broken launcher.
+- Open Repo Assist PRs still visible before refresh: #47, #54, #55.
