@@ -1,9 +1,9 @@
 {
-  "last_run": "2026-07-03T04:25:02Z",
+  "last_run": "2026-07-03T14:39:41Z",
   "activities": [
-    "Created branch repo-assist/improve-packaging-check-syntax for packaging-check hardening",
-    "Added shell syntax validation to scripts/check-packaging.sh",
-    "Verified the new check with a clean temp copy and a deliberately broken launcher",
-    "Prepared the monthly activity update for July 2026"
+    "Continued repo-assist/improve-packaging-check-syntax-9203de61604331ef on a local branch",
+    "Added scripts/test-check-packaging.sh and wired it into .github/workflows/test-snap-can-build.yml",
+    "Verified scripts/check-packaging.sh and the regression test locally",
+    "Prepared the July 2026 monthly activity update"
   ]
 }
