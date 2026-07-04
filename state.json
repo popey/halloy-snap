@@ -1,9 +1,8 @@
 {
-  "last_run": "2026-07-04T04:10:26Z",
+  "last_run": "2026-07-04T14:08:30Z",
   "activities": [
-    "Prepared launcher quoting hardening and a packaging-check regression script on repo-assist/ci-packaging-check-cache",
-    "Attempted to publish a draft PR, but repository authentication prevented pushing the branch",
-    "Verified scripts/check-packaging.sh, scripts/test-check-packaging.sh, and shell syntax locally",
-    "Updated the July 2026 monthly activity issue with the blocked publication note"
+    "Commented on issue #62 about local packaging checks passing and the remaining PR publication/auth blocker",
+    "Updated CONTRIBUTING.md to recommend scripts/check-packaging.sh for packaging changes",
+    "Added path filters to .github/workflows/test-snap-can-build.yml to avoid irrelevant workflow runs"
   ]
 }
