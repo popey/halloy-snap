@@ -13,3 +13,5 @@
 2026-07-02: Commented on issue #51, split launcher hardening onto branch repo-assist/harden-launcher-2026-07-02, and verified the launcher-only change with bash -n, a fake halloy binary, and scripts/check-packaging.sh.
 
 2026-07-03: Continued the packaging-check syntax branch, added scripts/test-check-packaging.sh, wired it into the build workflow, verified the regression test locally, and prepared the July monthly activity update.
+
+2026-07-04: Prepared a packaging-check regression script and launcher quoting hardening on branch repo-assist/ci-packaging-check-cache, verified packaging checks locally, updated the July monthly activity issue, and noted that GitHub authentication blocked draft PR publication.
