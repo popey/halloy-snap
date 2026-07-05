@@ -1,9 +1,10 @@
 {
-  "last_run": "2026-07-05T04:38:58Z",
+  "last_run": "2026-07-05T14:17:08Z",
   "activities": [
-    "Commented on issue #64 about the local path-filter change and the remaining PR publication/auth blocker",
-    "Updated .github/workflows/test-snap-can-build.yml to skip unrelated changes via path filters",
-    "Validated the workflow YAML and diff formatting locally",
-    "Noted that draft PR publication is still blocked by repository authentication"
+    "Added path filters to .github/workflows/test-snap-can-build.yml so the snap workflow skips unrelated changes",
+    "Commented on issue #65 noting it duplicates #64 and that the local fix is ready",
+    "Validated the workflow YAML and checked the diff for formatting issues",
+    "Monthly Activity issue #58 updated with the latest run summary and pending maintainer actions",
+    "Draft PR publication remained blocked by the available write path, so no PR was opened from this run"
   ]
 }
