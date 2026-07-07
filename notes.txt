@@ -18,3 +18,5 @@
 2026-07-04: Commented on issue #62 about local packaging checks passing and PR publication/auth being the remaining blocker.
 2026-07-04: Updated CONTRIBUTING.md to recommend scripts/check-packaging.sh for packaging changes and added workflow path filters to test-snap-can-build.yml.
 2026-07-06: Added packaging-check regression coverage, launcher quoting hardening, and a fast packaging-check job; validated shell syntax and packaging tests locally. Draft PR publication could not be confirmed from the available write path.
+
+2026-07-07: Added workflow path filters to skip irrelevant snap builds, validated the YAML and diff, and requested draft PR publication from branch repo-assist/perf-skip-workflow-runs-2026-07-07.
