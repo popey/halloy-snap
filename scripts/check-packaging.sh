@@ -25,44 +25,60 @@ if [ "$failed" -ne 0 ]; then
   exit 1
 fi
 
-mapfile -t commands < <(
+mapfile -t app_commands < <(
   awk '
-    /^[[:space:]]*command:[[:space:]]*/ {
-      sub(/^[[:space:]]*command:[[:space:]]*/, "")
-      gsub(/^["'\'']|["'\'']$/, "")
-      print
+    /^apps:[[:space:]]*$/ {
+      in_apps=1
+      current_app=""
+      next
+    }
+
+    in_apps && /^  [^[:space:]][^:]*:[[:space:]]*$/ {
+      current_app=$1
+      sub(/:$/, "", current_app)
+      next
+    }
+
+    in_apps && /^[[:space:]]*command:[[:space:]]*/ {
+      if (current_app != "") {
+        sub(/^[[:space:]]*command:[[:space:]]*/, "")
+        gsub(/^"|"$/, "")
+        print current_app "|" $0
+      }
     }
   ' "$SNAPCRAFT_YAML"
 )
 
-if [ "${#commands[@]}" -eq 0 ]; then
+if [ "${#app_commands[@]}" -eq 0 ]; then
   echo "ERROR: no app command entries found in snap/snapcraft.yaml" >&2
   exit 1
 fi
 
-for command in "${commands[@]}"; do
+for app_command in "${app_commands[@]}"; do
+  app_name="${app_command%%|*}"
+  command="${app_command#*|}"
   launcher="${command##* }"
 
   if [[ "$launcher" = /* ]]; then
-    echo "Skipping absolute command path: $launcher"
+    echo "Skipping absolute command path for $app_name: $launcher"
     continue
   fi
 
   launcher_path="$SNAP_LOCAL/$launcher"
 
   if [ ! -f "$launcher_path" ]; then
-    echo "ERROR: launcher not found: $launcher_path" >&2
+    echo "ERROR: launcher not found for $app_name: $launcher_path" >&2
     failed=1
     continue
   fi
 
   if [ ! -x "$launcher_path" ]; then
-    echo "ERROR: launcher is not executable: $launcher_path" >&2
+    echo "ERROR: launcher is not executable for $app_name: $launcher_path" >&2
     failed=1
     continue
   fi
 
-  echo "OK: $launcher is present and executable"
+  echo "OK: $app_name -> $launcher is present and executable"
 done
 
 if [ "$failed" -ne 0 ]; then
