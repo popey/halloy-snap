@@ -23,3 +23,5 @@
 
 2026-07-09: Commented on issue #66, improved packaging-check diagnostics, validated the script locally, and requested draft PR creation for branch repo-assist/improve-packaging-check-diagnostics.
 2026-07-09: added launcher-argument regression coverage, commented on issue #71, pushed a follow-up commit to the packaging-check diagnostics branch, and updated the monthly activity summary.
+
+2026-07-10: Commented on issues #60 and #61 with canonical PR pointers, and updated the July monthly activity issue with the new run history.
