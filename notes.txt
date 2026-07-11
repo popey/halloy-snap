@@ -25,3 +25,4 @@
 2026-07-09: added launcher-argument regression coverage, commented on issue #71, pushed a follow-up commit to the packaging-check diagnostics branch, and updated the monthly activity summary.
 
 2026-07-10: Commented on issues #60 and #61 with canonical PR pointers, and updated the July monthly activity issue with the new run history.
+2026-07-11: Commented on issue #79 about the path-filter fallback issue already appearing to be on main, fixed the executable bit on scripts/test-launch.sh, revalidated the launcher regression test, and the July monthly activity body replacement still did not persist from this workflow target.
