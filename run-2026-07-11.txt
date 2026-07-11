@@ -1,0 +1,8 @@
+2026-07-11 run
+- Selected tasks: 2 (no fresh human issue comment was applicable), 5 (launcher quoting hardening), 4 (snap workflow path filters).
+- Created branch repo-assist/improve-launcher-quoting-2026-07-11 and added scripts/test-launch.sh plus a quoted exec in snap/local/bin/launch.
+- Created branch repo-assist/eng-snap-path-filters-2026-07-11 and added workflow path filters to .github/workflows/test-snap-can-build.yml.
+- Validated bash -n, scripts/test-launch.sh, scripts/check-packaging.sh, ruby YAML parsing, and git diff --check.
+- Requested draft PR publication for both branches with safeoutputs.
+- Updated the July monthly activity issue with the current pending maintainer actions and run history.
+- Monthly activity body replacement still appears blocked from this workflow target; posted a fallback comment on issue #58 instead.
