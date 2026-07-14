@@ -1,9 +1,9 @@
 {
-  "last_run": "2026-07-13T15:20:10Z",
+  "last_run": "2026-07-14T03:44:20Z",
   "activities": [
-    "Added a packaging root-fallback regression helper and pre-build workflow check on branch repo-assist/improve-packaging-root-fallback-2026-07-13",
-    "Validated bash -n, the helper, YAML parsing, and git diff --check",
-    "Monthly activity body replacement still does not persist from this workflow target, so fallback comments remain necessary",
+    "Added a README developer note reminding contributors to re-run gh aw compile after workflow edits on branch repo-assist/improve-readme-gh-aw-compile-2026-07-14",
+    "Validated git diff --check and committed the docs-only change",
+    "Monthly activity body replacement still does not persist from this workflow target, so a fallback comment was posted on issue 58",
     "Suppressed Repo Assist failure-report noise in the workflow",
     "Validated launcher quoting and workflow path-filter changes"
   ]
