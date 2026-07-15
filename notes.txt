@@ -5,3 +5,5 @@
 2026-07-10: Repo Assist kept commenting on packaging PR overlap issues.
 2026-07-14: added README note about gh aw compile; monthly summary body still did not persist, so a fallback comment was posted on #58.
 2026-07-14: removed an unnecessary checkout from the smoke-test workflow job, validated the workflow, and updated the July monthly activity summary.
+2026-07-15: docs guidance update landed in CONTRIBUTING.md; commented on #57 and refreshed the monthly summary.
+2026-07-15: create_pull_request returned a patch bundle without a visible PR number, so watch for publication follow-up if needed.
