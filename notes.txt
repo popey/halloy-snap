@@ -7,3 +7,4 @@
 2026-07-14: removed an unnecessary checkout from the smoke-test workflow job, validated the workflow, and updated the July monthly activity summary.
 2026-07-15: docs guidance update landed in CONTRIBUTING.md; commented on #57 and refreshed the monthly summary.
 2026-07-15: create_pull_request returned a patch bundle without a visible PR number, so watch for publication follow-up if needed.
+2026-07-15: added packaging preflight CI, refreshed CONTRIBUTING packaging checks, commented on #84 and #88, and updated the monthly summary.

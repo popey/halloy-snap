@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-07-15T03:44:45Z",
+  "last_run": "2026-07-15T14:20:16Z",
   "activities": [
     "Updated CONTRIBUTING.md to clarify packaging and launcher test guidance",
     "Commented on issue 57 about overlap with later packaging regression follow-ups",
@@ -11,6 +11,12 @@
     "Added a README developer note reminding contributors to re-run gh aw compile after workflow edits on branch repo-assist/improve-readme-gh-aw-compile-2026-07-14",
     "Validated git diff --check and committed the docs-only change",
     "Monthly activity body replacement still does not persist from this workflow target, so a fallback comment was posted on issue 58",
-    "Suppressed Repo Assist failure-report noise in the workflow"
+    "Suppressed Repo Assist failure-report noise in the workflow",
+    "Added a packaging preflight workflow job and a root-fallback regression test",
+    "Clarified CONTRIBUTING.md with exact packaging validation commands",
+    "Commented on issues #84 and #88 with the new packaging-validation status",
+    "Requested draft PR publication for branch repo-assist/improve-packaging-validation-2026-07-15",
+    "Validated bash -n, packaging checks, workflow YAML parsing, and git diff --check",
+    "Updated the July monthly activity summary with the new run entry"
   ]
 }
