@@ -9,3 +9,4 @@
 2026-07-15: create_pull_request returned a patch bundle without a visible PR number, so watch for publication follow-up if needed.
 2026-07-15: added packaging preflight CI, refreshed CONTRIBUTING packaging checks, commented on #84 and #88, and updated the monthly summary.
 2026-07-16: commented on issue 89, refreshed the July monthly summary, and prepared two CI workflow improvements (smoke-test checkout removal and snap artifact discovery hardening).
+2026-07-16: commented on #67/#68/#69, hardened sync-version version parsing, and requested draft PR publication for repo-assist/improve-sync-version-parsing-2026-07-16. Monthly summary body replacement still does not persist, so fallback comments remain necessary.
