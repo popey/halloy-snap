@@ -24,6 +24,8 @@
     "Validated the workflow YAML, artifact selection shell logic, and git diff --check",
     "Commented on issues #67, #68, and #69 about overlapping tracker issues",
     "Updated sync-version workflow version parsing and validated YAML plus diff checks",
-    "Requested draft PR publication for branch repo-assist/improve-sync-version-parsing-2026-07-16"
+    "Requested draft PR publication for branch repo-assist/improve-sync-version-parsing-2026-07-16",
+    "Narrowed build-job permissions in .github/workflows/test-snap-can-build.yml and validated the workflow YAML plus git diff --check",
+    "Updated the July monthly activity summary with the current run entry"
   ]
 }

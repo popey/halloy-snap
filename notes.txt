@@ -10,3 +10,5 @@
 2026-07-15: added packaging preflight CI, refreshed CONTRIBUTING packaging checks, commented on #84 and #88, and updated the monthly summary.
 2026-07-16: commented on issue 89, refreshed the July monthly summary, and prepared two CI workflow improvements (smoke-test checkout removal and snap artifact discovery hardening).
 2026-07-16: commented on #67/#68/#69, hardened sync-version version parsing, and requested draft PR publication for repo-assist/improve-sync-version-parsing-2026-07-16. Monthly summary body replacement still does not persist, so fallback comments remain necessary.
+13. 2026-07-17: narrowed build-job permissions in .github/workflows/test-snap-can-build.yml, validated the workflow YAML and git diff --check, and refreshed the July monthly summary.
+14. 2026-07-17: issue triage found no human-authored open issues needing comment or a fix this run.
