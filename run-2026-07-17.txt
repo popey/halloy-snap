@@ -1,0 +1,7 @@
+2026-07-17 run
+- Selected tasks: 8 (performance), 3 (issue fix; no bug issue was available so this became the CI optimization work), 4 (engineering investments)
+- Implemented workflow `paths` filters in `.github/workflows/test-snap-can-build.yml` and removed the redundant smoke-test checkout.
+- Validated `ruby -e 'require "yaml"; YAML.safe_load(File.read(".github/workflows/test-snap-can-build.yml")); puts "YAML OK"'`, `scripts/check-packaging.sh`, and `git --no-pager diff --check`.
+- Commented on issues #73 and #91.
+- Created branch `repo-assist/eng-ci-optimizations-2026-07-17` and requested draft PR publication; the PR number was not surfaced in the workflow output.
+- Updated the July monthly activity summary with the new run entry and current pending actions.

@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-07-16T14:32:24Z",
+  "last_run": "2026-07-17T14:17:00Z",
   "activities": [
     "Updated CONTRIBUTING.md to clarify packaging and launcher test guidance",
     "Commented on issue 57 about overlap with later packaging regression follow-ups",
@@ -26,6 +26,10 @@
     "Updated sync-version workflow version parsing and validated YAML plus diff checks",
     "Requested draft PR publication for branch repo-assist/improve-sync-version-parsing-2026-07-16",
     "Narrowed build-job permissions in .github/workflows/test-snap-can-build.yml and validated the workflow YAML plus git diff --check",
+    "Updated the July monthly activity summary with the current run entry",
+    "Optimized the snap workflow triggers by adding path filters and removing the redundant smoke-test checkout",
+    "Commented on issues #73 and #91 about the CI optimization work",
+    "Prepared draft PR branch repo-assist/eng-ci-optimizations-2026-07-17",
     "Updated the July monthly activity summary with the current run entry"
   ]
 }
