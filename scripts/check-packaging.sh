@@ -41,7 +41,7 @@ if [ "${#commands[@]}" -eq 0 ]; then
 fi
 
 for command in "${commands[@]}"; do
-  launcher="${command##* }"
+  launcher="${command%%[[:space:]]*}"
 
   if [[ "$launcher" = /* ]]; then
     echo "Skipping absolute command path: $launcher"
