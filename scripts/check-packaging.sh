@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if ROOT_DIR="$(git rev-parse --show-toplevel 2>/dev/null)"; then
+if [ -n "${ROOT_DIR:-}" ]; then
+  :
+elif ROOT_DIR="$(git rev-parse --show-toplevel 2>/dev/null)"; then
   :
 else
   ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
