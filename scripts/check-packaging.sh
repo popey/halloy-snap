@@ -62,7 +62,13 @@ for command in "${commands[@]}"; do
     continue
   fi
 
-  echo "OK: $launcher is present and executable"
+  if ! bash -n "$launcher_path"; then
+    echo "ERROR: launcher has shell syntax errors: $launcher_path" >&2
+    failed=1
+    continue
+  fi
+
+  echo "OK: $launcher is present, executable, and shell-checked"
 done
 
 if [ "$failed" -ne 0 ]; then
