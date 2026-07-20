@@ -16,3 +16,4 @@
 2026-07-18: commented on #70/#72, trimmed the smoke-test checkout, added packaging regression tests, refreshed the monthly summary, and requested draft PR publication for repo-assist/improve-ci-packaging-checkout-tests-2026-07-18.
 2026-07-19: commented on #85/#86/#97, refreshed the monthly activity summary, and found no failing Repo Assist PR checks to fix.
 2026-07-19: monthly body replacement did not persist, so a fallback comment was posted on issue 58 to record the run.
+2026-07-20: added shell-syntax validation to scripts/check-packaging.sh, added scripts/test-check-packaging-syntax.sh, requested draft PR publication, and updated the July monthly activity summary.
