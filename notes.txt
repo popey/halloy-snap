@@ -17,3 +17,5 @@
 2026-07-19: commented on #85/#86/#97, refreshed the monthly activity summary, and found no failing Repo Assist PR checks to fix.
 2026-07-19: monthly body replacement did not persist, so a fallback comment was posted on issue 58 to record the run.
 2026-07-20: added shell-syntax validation to scripts/check-packaging.sh, added scripts/test-check-packaging-syntax.sh, requested draft PR publication, and updated the July monthly activity summary.
+2026-07-20: quoted the snap launcher exec path, added a regression test, and requested draft PR publication.
+2026-07-20: commented on issue #100 about the effective-token budget failure and refreshed the monthly summary.

@@ -1,5 +1,5 @@
 {
-  "last_run": "2026-07-19T14:01:08Z",
+  "last_run": "2026-07-20T14:38:03Z",
   "activities": [
     "Updated CONTRIBUTING.md to clarify packaging and launcher test guidance",
     "Commented on issue 57 about overlap with later packaging regression follow-ups",
@@ -39,6 +39,10 @@
     "Commented on issues #85, #86, and #97 with duplicate/overlap guidance",
     "Updated the July monthly activity summary with the current run entry",
     "Posted a fallback comment on the July monthly activity issue after body replacement did not persist",
-    "Verified the monthly activity issue still needs the latest run details reflected in comments"
+    "Verified the monthly activity issue still needs the latest run details reflected in comments",
+    "Commented on issue 100 about the effective-token budget failure",
+    "Quoted the snap launcher exec path and added a regression test on branch repo-assist/improve-launcher-quote-2026-07-20",
+    "Requested draft PR publication for the launcher quoting improvement",
+    "Updated the July monthly activity summary with the current run entry"
   ]
 }
