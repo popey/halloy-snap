@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-export XDG_CONFIG_HOME="${SNAP_USER_COMMON}"/.config
-exec $SNAP/bin/halloy "$@"
+export XDG_CONFIG_HOME="${SNAP_USER_COMMON}/.config"
+exec "${SNAP}/bin/halloy" "$@"

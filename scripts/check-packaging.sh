@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if ROOT_DIR="$(git rev-parse --show-toplevel 2>/dev/null)"; then
-  :
-else
-  ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+if [ -z "${ROOT_DIR:-}" ]; then
+  if ROOT_DIR="$(git rev-parse --show-toplevel 2>/dev/null)"; then
+    :
+  else
+    ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+  fi
 fi
 SNAP_LOCAL="$ROOT_DIR/snap/local"
 SNAPCRAFT_YAML="$ROOT_DIR/snap/snapcraft.yaml"
@@ -41,7 +43,7 @@ if [ "${#commands[@]}" -eq 0 ]; then
 fi
 
 for command in "${commands[@]}"; do
-  launcher="${command##* }"
+  read -r launcher _ <<<"$command"
 
   if [[ "$launcher" = /* ]]; then
     echo "Skipping absolute command path: $launcher"
@@ -60,6 +62,15 @@ for command in "${commands[@]}"; do
     echo "ERROR: launcher is not executable: $launcher_path" >&2
     failed=1
     continue
+  fi
+
+  first_line="$(head -n 1 "$launcher_path")"
+  if [[ "$first_line" == "#!"*"sh"* || "$first_line" == "#!"*"bash"* ]]; then
+    if ! bash -n "$launcher_path"; then
+      echo "ERROR: launcher has shell syntax errors: $launcher_path" >&2
+      failed=1
+      continue
+    fi
   fi
 
   echo "OK: $launcher is present and executable"
