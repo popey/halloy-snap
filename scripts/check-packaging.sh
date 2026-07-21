@@ -8,6 +8,7 @@ else
 fi
 SNAP_LOCAL="$ROOT_DIR/snap/local"
 SNAPCRAFT_YAML="$ROOT_DIR/snap/snapcraft.yaml"
+DESKTOP_FILE="$ROOT_DIR/snap/gui/halloy.desktop"
 
 failed=0
 
@@ -18,6 +19,11 @@ fi
 
 if [ ! -f "$SNAPCRAFT_YAML" ]; then
   echo "ERROR: snap/snapcraft.yaml not found" >&2
+  failed=1
+fi
+
+if [ ! -f "$DESKTOP_FILE" ]; then
+  echo "ERROR: snap/gui/halloy.desktop not found" >&2
   failed=1
 fi
 
@@ -69,4 +75,12 @@ if [ "$failed" -ne 0 ]; then
   exit 1
 fi
 
+desktop_exec="$(awk -F= '/^Exec=/{print $2; exit}' "$DESKTOP_FILE")"
+
+if [ "$desktop_exec" != "halloy" ]; then
+  echo "ERROR: desktop launcher Exec entry is unexpected: ${desktop_exec:-<empty>}" >&2
+  exit 1
+fi
+
+echo "OK: desktop launcher Exec entry targets halloy"
 echo "Packaging checks passed"
