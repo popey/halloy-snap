@@ -1,3 +1,4 @@
+2026-07-22: commented on issue #100 and opened draft PR branches for version parsing cleanup and snap workflow runtime reduction.
 2026-07-21: added desktop-entry validation and a regression test; monthly summary updated.
 2026-07-20: launcher quoting improvement and packaging syntax regression work remained in progress.
 2026-07-19: duplicate packaging-root follow-up comments were posted; monthly summary refreshed.
