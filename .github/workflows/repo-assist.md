@@ -3,7 +3,7 @@ engine:
   id: copilot
   model: gpt-5-mini
 description: |
-  A friendly repository assistant that runs regularly (twice a day by default) to assist maintainers.
+  A friendly repository assistant that runs on demand to assist maintainers.
   Can also be triggered on-demand via '/repo-assist <instructions>' to perform specific tasks.
   - Labels and triages open issues
   - Comments helpfully on open issues to unblock contributors and onboard newcomers
@@ -17,7 +17,6 @@ description: |
   Always polite, constructive, and mindful of the project's goals.
 
 on:
-  schedule: every 12h
   workflow_dispatch:
     inputs:
       command:
@@ -69,6 +68,7 @@ tools:
   repo-memory: true
 
 safe-outputs:
+  report-failure-as-issue: false
   noop:
     report-as-issue: false
   messages:
@@ -77,7 +77,7 @@ safe-outputs:
     run-success: "✓ {workflow_name} completed successfully, see [workflow run]({run_url})."
     run-failure: "✗ {workflow_name} encountered {status}, see [workflow run]({run_url})."
   add-comment:
-    max: 10
+    max: 1
     target: "*"
     hide-older-comments: true
   create-pull-request:
@@ -85,16 +85,16 @@ safe-outputs:
     title-prefix: "[repo-assist] "
     labels: [automation, repo-assist]
     protected-files: fallback-to-issue
-    max: 4
+    max: 1
   push-to-pull-request-branch:
     target: "*"
     required-title-prefix: "[repo-assist] "
-    max: 4
+    max: 1
     protected-files: fallback-to-issue
   create-issue:
     title-prefix: "[repo-assist] "
     labels: [automation, repo-assist]
-    max: 4
+    max: 1
   update-issue:
     target: "*"
     required-title-prefix: "[repo-assist] "
