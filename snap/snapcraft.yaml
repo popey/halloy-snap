@@ -14,10 +14,10 @@ base: core22
 compression: lzo
 
 icon: snap/gui/org.squidowl.halloy.png
-website: https://squidowl.org/
+website: https://halloy.chat
 source-code: https://github.com/squidowl/halloy
 issues: https://github.com/squidowl/halloy/issues
-contact: https://github.com/squidowl/halloy/issues
+contact: https://halloy.chat/get-in-touch
 
 architectures:
   - build-on: amd64
