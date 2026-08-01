@@ -69,3 +69,4 @@ apps:
     plugs:
       - network
       - audio-playback
+      - password-manager-service
